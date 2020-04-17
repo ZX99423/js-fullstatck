@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Cat(name, color) {
+            this.name = name;
+            this.color = color;
+        }
+        Cat.prototype.say = function() {
+            console.log('喵喵', this.name, this.color);
+        }
+
+        let cat1 = new Cat('小花', 'white');
+    </script>
+</body>
+</html>
