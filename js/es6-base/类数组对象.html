@@ -1,0 +1,65 @@
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    function Person() { }
+    // 静态 方法 不需要实例化 就能调用
+    Person.from = function(){
+        console.log('女娲')
+    }
+    Person.prototype.forEach = function () {
+        console.log('循环')
+    }
+    // 实例 对象
+    let didi = new Person();
+    didi.forEach()
+    Person.from();
+
+    //类数组对象
+    // 1.可以像数组一样，用数组[i] 取值
+    // 2.length
+    // 不全是数组
+    const lis = document.querySelectorAll('li')
+    // console.log(lis)
+    // lis.map(function() {
+
+    // })
+    Array.prototype.map.call(lis, function(liNode){
+        console.log(liNode)
+    })
+    let arr = [0, 1]
+    arr.forEach(function(num) {
+
+    })
+    function sum() {
+
+        // 参数个数 也不确定有几个
+        console.log(arguments[0], arguments)
+        let sum = 0;
+        //只有数组才有 forEach
+        //1.借用一下 考虑 this
+        // forEach: js 实现在哪里
+        // Array.prototype.forEach
+        Array.prototype.forEach.call(arguments, function(num){
+            console.log(num);
+        })
+        //2.Array.from() 从一个类似数组对象 创建一个新的 数组
+        const arr = Array.from(arguments);
+        arr.forEach(function(num) {
+            console.log(num)
+        })
+
+        // 
+        // arguments.forEach(num => {
+        //     sum += num;
+        // });
+        // console.log(sum)
+    }
+    sum(0, 1, 2, 3)
+    console.log(Math.max(1, 2, 3, 4, 5))
+    // Array.from 静态方法
+    // Array.prototype.forEach
+    
+</script>
